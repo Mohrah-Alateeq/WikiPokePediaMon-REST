@@ -13,7 +13,7 @@ pokemon.getAll = function(req, res, next) {
 };
 
 pokemon.getByID = function(req, res, next) {
-  connection.one("SELECT * FROM pokemons WHERE id = $1", [req.params.id])
+  connection.one("SELECT * FROM pokemon WHERE id = $1", [req.params.id])
     .then(function(result){
       res.locals.selectedPokemon = result;
       next();
